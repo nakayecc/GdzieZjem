@@ -32,10 +32,10 @@ namespace GdzieZjemAPI
             services.AddControllers();
             services.AddDbContext<ApiContext>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("ApiDBConnection")));
-            services.AddTransient<IGenericRepository<City>, GenericRepository<City>>();
-            services.AddTransient<IGenericRepository<Dish>, GenericRepository<Dish>>();
-            services.AddTransient<IGenericRepository<Kitchen>, GenericRepository<Kitchen>>();
-            services.AddTransient<IGenericRepository<Restaurant>, GenericRepository<Restaurant>>();
+            services.AddTransient<IRepository<City>, Repository<City>>();
+            services.AddTransient<IRepository<Dish>, Repository<Dish>>();
+            services.AddTransient<IRepository<Kitchen>, Repository<Kitchen>>();
+            services.AddTransient<IRepository<Restaurant>, Repository<Restaurant>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

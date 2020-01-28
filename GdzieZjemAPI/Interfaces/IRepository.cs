@@ -2,7 +2,7 @@
 
 namespace GdzieZjemAPI.Interfaces
 {
-    public interface IGenericRepository<T> where T : class
+    public interface IRepository<T> where T : class
     {
         List<T> GetAll();
         T GetById(object id);

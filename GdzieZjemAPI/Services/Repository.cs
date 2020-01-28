@@ -6,12 +6,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GdzieZjemAPI.Services
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : class
     {
         private ApiContext _context;
         private DbSet<T> table;
 
-        public GenericRepository(ApiContext context)
+        public Repository(ApiContext context)
         {
             _context = context;
             table = _context.Set<T>();
