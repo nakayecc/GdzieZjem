@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\48795\\source\\repos\\GdzieZjem\\GdzieZjemAPI\\GdzieZjemAPI.csproj": {}
+    "C:\\Users\\michal\\RiderProjects\\GdzieZjem\\GdzieZjemAPI\\GdzieZjemAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\48795\\source\\repos\\GdzieZjem\\GdzieZjemAPI\\GdzieZjemAPI.csproj": {
+    "C:\\Users\\michal\\RiderProjects\\GdzieZjem\\GdzieZjemAPI\\GdzieZjemAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\48795\\source\\repos\\GdzieZjem\\GdzieZjemAPI\\GdzieZjemAPI.csproj",
+        "projectUniqueName": "C:\\Users\\michal\\RiderProjects\\GdzieZjem\\GdzieZjemAPI\\GdzieZjemAPI.csproj",
         "projectName": "GdzieZjemAPI",
-        "projectPath": "C:\\Users\\48795\\source\\repos\\GdzieZjem\\GdzieZjemAPI\\GdzieZjemAPI.csproj",
-        "packagesPath": "C:\\Users\\48795\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\48795\\source\\repos\\GdzieZjem\\GdzieZjemAPI\\obj\\",
+        "projectPath": "C:\\Users\\michal\\RiderProjects\\GdzieZjem\\GdzieZjemAPI\\GdzieZjemAPI.csproj",
+        "packagesPath": "C:\\Users\\michal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\michal\\RiderProjects\\GdzieZjem\\GdzieZjemAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\48795\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\michal\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\48795\\source\\repos\\GdzieZjem\\GdzieZjemAPI\\GdzieZjemAPI.csproj",
+    "projectUniqueName": "C:\\Users\\michal\\RiderProjects\\GdzieZjem\\GdzieZjemAPI\\GdzieZjemAPI.csproj",
     "projectName": "GdzieZjemAPI",
-    "projectPath": "C:\\Users\\48795\\source\\repos\\GdzieZjem\\GdzieZjemAPI\\GdzieZjemAPI.csproj",
-    "outputPath": "C:\\Users\\48795\\source\\repos\\GdzieZjem\\GdzieZjemAPI\\obj\\",
+    "projectPath": "C:\\Users\\michal\\RiderProjects\\GdzieZjem\\GdzieZjemAPI\\GdzieZjemAPI.csproj",
+    "outputPath": "C:\\Users\\michal\\RiderProjects\\GdzieZjem\\GdzieZjemAPI\\obj\\",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netcoreapp3.0"
@@ -51,16 +51,7 @@
         "net48"
       ],
       "assetTargetFallback": true,
-      "warn": true,
-      "frameworkReferences": {
-        "Microsoft.AspNetCore.App": {
-          "privateAssets": "none"
-        },
-        "Microsoft.NETCore.App": {
-          "privateAssets": "all"
-        }
-      },
-      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+      "warn": true
     }
   }
 }
