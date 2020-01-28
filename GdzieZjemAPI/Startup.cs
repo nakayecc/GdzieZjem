@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GdzieZjemAPI.Interfaces;
 using GdzieZjemAPI.Models;
+using GdzieZjemAPI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,6 +32,10 @@ namespace GdzieZjemAPI
             services.AddControllers();
             services.AddDbContext<ApiContext>(opt =>
                 opt.UseSqlServer(Configuration.GetConnectionString("ApiDBConnection")));
+            services.AddTransient<IGenericRepository<City>, GenericRepository<City>>();
+            services.AddTransient<IGenericRepository<Dish>, GenericRepository<Dish>>();
+            services.AddTransient<IGenericRepository<Kitchen>, GenericRepository<Kitchen>>();
+            services.AddTransient<IGenericRepository<Restaurant>, GenericRepository<Restaurant>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
