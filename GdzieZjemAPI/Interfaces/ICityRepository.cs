@@ -6,7 +6,7 @@ namespace GdzieZjemAPI.Interfaces
 {
     public interface ICityRepository : IRepository<City>
     {
-        RestaurantInCityDao RestaurantInCity(int cityId);
+        RestaurantInCityDao FindRestaurantByCityId(int cityId);
 
     }
 }
