@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace GdzieZjemAPI.Interfaces
 {
     public interface IRepository<T> where T : class
     {
-        List<T> GetAll();
+        DbSet<T> GetContext();
         T GetById(object id);
         void Insert(T obj);
         void Delete(object id);

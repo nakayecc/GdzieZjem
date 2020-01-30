@@ -17,9 +17,9 @@ namespace GdzieZjemAPI.Services
             table = _context.Set<T>();
         }
 
-        public List<T> GetAll()
+        public DbSet<T> GetContext()
         {
-            return table.ToList();
+            return table;
         }
 
         public T GetById(object id)
