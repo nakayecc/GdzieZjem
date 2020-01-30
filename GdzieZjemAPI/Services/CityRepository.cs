@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using GdzieZjemAPI.Interfaces;
 using GdzieZjemAPI.Models;
@@ -14,11 +15,13 @@ namespace GdzieZjemAPI.Services
         {
         }
 
-
         public RestaurantInCityDao FindRestaurantByCityId(int cityId)
         {
+            if (GetContext().Find(cityId) == null)
+                return null;
+            
             var restaurantInCityDao = new RestaurantInCityDao();
-            restaurantInCityDao.City = "krakow";
+            restaurantInCityDao.City = GetContext().Find(cityId).Name;
 
             var quarry = GetContext()
                 .Where(c => c.Id == cityId)
@@ -37,5 +40,6 @@ namespace GdzieZjemAPI.Services
 
             return restaurantInCityDao;
         }
+        
     }
 }
