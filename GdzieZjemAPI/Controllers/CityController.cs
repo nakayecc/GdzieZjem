@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using GdzieZjemAPI.Interfaces;
@@ -23,12 +24,19 @@ namespace GdzieZjemAPI.Controllers
         }
 
         // GET: api/city/{id}
-        [HttpGet("{id}")]
+        [HttpGet("{id}/restaurant")]
         public ActionResult<RestaurantInCityDao> GetRestaurantByCity(int id)
         {
             if (_cityRepository.FindRestaurantByCityId(id) == null)
                 return NotFound();
             return _cityRepository.FindRestaurantByCityId(id);
+        }
+        
+        //Get api/city
+        [HttpGet]
+        public List<SelectCityDto> GetAllCity()
+        {
+            return _cityRepository.GetAllCity();
         }
         
     }

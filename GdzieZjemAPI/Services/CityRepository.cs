@@ -19,7 +19,7 @@ namespace GdzieZjemAPI.Services
         {
             if (GetContext().Find(cityId) == null)
                 return null;
-            
+
             var restaurantInCityDao = new RestaurantInCityDao();
             restaurantInCityDao.City = GetContext().Find(cityId).Name;
 
@@ -40,6 +40,21 @@ namespace GdzieZjemAPI.Services
 
             return restaurantInCityDao;
         }
-        
+
+        public List<SelectCityDto> GetAllCity()
+        {
+            var query = GetContext().Select(m => new SelectCityDto()
+                {
+                    CityName = m.Name
+                })
+                .ToList();
+
+           return query;
+            
+
+
+
+           return null;
+        }
     }
 }
