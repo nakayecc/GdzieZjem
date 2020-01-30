@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using GdzieZjemAPI.Interfaces;
 using GdzieZjemAPI.Models;
 using GdzieZjemAPI.Models.Dao;
@@ -13,7 +14,6 @@ namespace GdzieZjemAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-
     public class CityController : Controller
     {
         private readonly ICityRepository _cityRepository;
@@ -31,13 +31,21 @@ namespace GdzieZjemAPI.Controllers
                 return NotFound();
             return _cityRepository.FindRestaurantByCityId(id);
         }
-        
-        //Get api/city
+
+        // GET: api/city
         [HttpGet]
         public List<SelectCityDto> GetAllCity()
         {
             return _cityRepository.GetAllCity();
         }
-        
+
+        // POST: api/city
+        [HttpPost]
+        public Task<ActionResult<City>> PostCity(City city)
+        {
+            return _cityRepository.PostCity(city)
+                ? Task.FromResult<ActionResult<City>>(Created("ssss", city))
+                : Task.FromResult<ActionResult<City>>(BadRequest("City: " + city.Name + " Exist in DB"));
+        }
     }
 }

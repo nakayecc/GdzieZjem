@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using GdzieZjemAPI.Interfaces;
 using GdzieZjemAPI.Models;
 using GdzieZjemAPI.Models.Dao;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 
@@ -48,13 +50,16 @@ namespace GdzieZjemAPI.Services
                     CityName = m.Name
                 })
                 .ToList();
+            return query;
+        }
 
-           return query;
-            
-
-
-
-           return null;
+        public bool PostCity(City city)
+        {
+            if (GetContext().FirstOrDefault(c => c.Name == city.Name) != null)
+                return false;
+            Insert(city);
+            Save();
+            return true;
         }
     }
 }
