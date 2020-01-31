@@ -61,5 +61,14 @@ namespace GdzieZjemAPI.Services
             Save();
             return true;
         }
+
+        public bool RemoveCity(int id)
+        {
+            if (GetContext().Find(id) == null)
+                return false;
+            Delete(id);
+            Save();
+            return true;
+        }
     }
 }

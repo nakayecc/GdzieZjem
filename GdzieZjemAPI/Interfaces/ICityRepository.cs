@@ -9,6 +9,7 @@ namespace GdzieZjemAPI.Interfaces
         RestaurantInCityDao FindRestaurantByCityId(int cityId);
         List<SelectCityDto> GetAllCity();
         bool PostCity(City city);
+        bool RemoveCity(int id);
 
     }
 }

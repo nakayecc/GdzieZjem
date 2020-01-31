@@ -47,5 +47,16 @@ namespace GdzieZjemAPI.Controllers
                 ? Task.FromResult<ActionResult<City>>(Created("ssss", city))
                 : Task.FromResult<ActionResult<City>>(BadRequest("City: " + city.Name + " Exist in DB"));
         }
+        
+        //DELETE : api/city
+        [HttpDelete("{id}")]
+        public Task<ActionResult<City>> DeleteCity(int id)
+        {
+            return _cityRepository.RemoveCity(id)
+                ? Task.FromResult<ActionResult<City>>(Ok("Removed city id: " + id))
+                : Task.FromResult<ActionResult<City>>(BadRequest("City not exist on Id: " + id));
+        }
+        
+        
     }
 }
