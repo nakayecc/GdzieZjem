@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\48795\\Desktop\\Nowy folder\\GdzieZjem\\GdzieZjemAPI\\GdzieZjemAPI.csproj",
+    "projectUniqueName": "C:\\Users\\michal\\Desktop\\GdzieZjem\\GdzieZjemAPI\\GdzieZjemAPI.csproj",
     "projectName": "GdzieZjemAPI",
-    "projectPath": "C:\\Users\\48795\\Desktop\\Nowy folder\\GdzieZjem\\GdzieZjemAPI\\GdzieZjemAPI.csproj",
-    "outputPath": "C:\\Users\\48795\\Desktop\\Nowy folder\\GdzieZjem\\GdzieZjemAPI\\obj\\",
+    "projectPath": "C:\\Users\\michal\\Desktop\\GdzieZjem\\GdzieZjemAPI\\GdzieZjemAPI.csproj",
+    "outputPath": "C:\\Users\\michal\\Desktop\\GdzieZjem\\GdzieZjemAPI\\obj\\",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netcoreapp3.0"
@@ -27,6 +27,10 @@
   "frameworks": {
     "netcoreapp3.0": {
       "dependencies": {
+        "Microsoft.AspNetCore.Authentication.JwtBearer": {
+          "target": "Package",
+          "version": "[3.0.2, )"
+        },
         "Microsoft.EntityFrameworkCore": {
           "target": "Package",
           "version": "[3.1.1, )"
@@ -40,6 +44,14 @@
           "suppressParent": "All",
           "target": "Package",
           "version": "[3.1.1, )"
+        },
+        "System.IdentityModel.Tokens.Jwt": {
+          "target": "Package",
+          "version": "[5.6.0, )"
+        },
+        "System.Runtime.Serialization.Json": {
+          "target": "Package",
+          "version": "[4.3.0, )"
         }
       },
       "imports": [
@@ -52,16 +64,6 @@
       ],
       "assetTargetFallback": true,
       "warn": true,
-      "downloadDependencies": [
-        {
-          "name": "Microsoft.AspNetCore.App.Ref",
-          "version": "[3.0.1, 3.0.1]"
-        },
-        {
-          "name": "Microsoft.NETCore.App.Host.win-x64",
-          "version": "[3.0.2, 3.0.2]"
-        }
-      ],
       "frameworkReferences": {
         "Microsoft.AspNetCore.App": {
           "privateAssets": "none"
@@ -70,7 +72,7 @@
           "privateAssets": "all"
         }
       },
-      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
     }
   }
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using GdzieZjemAPI.Interfaces;
 using GdzieZjemAPI.Models;
 using GdzieZjemAPI.Models.Dao;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,6 +35,7 @@ namespace GdzieZjemAPI.Controllers
 
         // GET: api/city
         [HttpGet]
+        [Authorize]
         public List<SelectCityDto> GetAllCity()
         {
             return _cityRepository.GetAllCity();

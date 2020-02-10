@@ -43,6 +43,8 @@ namespace GdzieZjemAPI.Migrations
 
                     b.HasKey("CityId", "RestaurantId");
 
+                    b.HasIndex("RestaurantId");
+
                     b.ToTable("CityRestaurant");
                 });
 
@@ -117,6 +119,35 @@ namespace GdzieZjemAPI.Migrations
                     b.ToTable("Restaurants");
                 });
 
+            modelBuilder.Entity("GdzieZjemAPI.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NickName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Token")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
             modelBuilder.Entity("GdzieZjemAPI.Models.CityRestaurant", b =>
                 {
                     b.HasOne("GdzieZjemAPI.Models.City", "City")
@@ -127,7 +158,7 @@ namespace GdzieZjemAPI.Migrations
 
                     b.HasOne("GdzieZjemAPI.Models.Restaurant", "Restaurant")
                         .WithMany("CityRestaurants")
-                        .HasForeignKey("CityId")
+                        .HasForeignKey("RestaurantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
