@@ -12,6 +12,7 @@ namespace GdzieZjemAPI.Models
         public DbSet<Dish> Dishes { get; set; }
         public DbSet<Kitchen> Kitchens { get; set; }
         public DbSet<Restaurant> Restaurants { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
