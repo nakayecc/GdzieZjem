@@ -11,7 +11,7 @@ namespace GdzieZjemAPI.Helpers
             return users.Select(user => user.WithoutPassword());
         }
 
-        private static User WithoutPassword(this User user)
+        public static User WithoutPassword(this User user)
         {
             user.Password = null;
             return user;

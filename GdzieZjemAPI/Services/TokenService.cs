@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using GdzieZjemAPI.Controllers;
+using GdzieZjemAPI.Helpers;
 using GdzieZjemAPI.Interfaces;
 using GdzieZjemAPI.Models;
 using Microsoft.Extensions.Configuration;
@@ -46,7 +47,9 @@ namespace GdzieZjemAPI.Services
                 return null;
             currentUser.Token = GenerateToken(currentUser);
             _apiContext.SaveChanges();
-            return currentUser;
+            return currentUser.WithoutPassword();
+
+            
         }
     }
 }
