@@ -17,6 +17,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.Swagger;
 
 namespace GdzieZjemAPI
 {
@@ -37,6 +39,7 @@ namespace GdzieZjemAPI
                 opt.UseSqlServer(Configuration.GetConnectionString("ApiDBConnection")));
             services.AddTransient<ICityRepository, CityRepository>();
             services.AddTransient<ITokenService, TokenService>();
+            services.AddSwaggerGen(c => c.SwaggerDoc("v1", new OpenApiInfo {Title = "Value Api", Version = "v1"}));
 
             services.AddAuthentication(opt =>
             {
@@ -70,6 +73,8 @@ namespace GdzieZjemAPI
             app.UseRouting();
             app.UseAuthorization();
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            app.UseSwagger();
+            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Values Api V1"); });
         }
     }
 }

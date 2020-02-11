@@ -222,3 +222,11 @@ C:\Users\michal\Desktop\GdzieZjem\GdzieZjemAPI\obj\Debug\netcoreapp3.0\GdzieZjem
 C:\Users\michal\Desktop\GdzieZjem\GdzieZjemAPI\obj\Debug\netcoreapp3.0\GdzieZjemAPI.csproj.CopyComplete
 C:\Users\michal\Desktop\GdzieZjem\GdzieZjemAPI\obj\Debug\netcoreapp3.0\GdzieZjemAPI.dll
 C:\Users\michal\Desktop\GdzieZjem\GdzieZjemAPI\obj\Debug\netcoreapp3.0\GdzieZjemAPI.pdb
+C:\Users\michal\Desktop\GdzieZjem\GdzieZjemAPI\bin\Debug\netcoreapp3.0\System.Net.Http.Formatting.dll
+C:\Users\michal\Desktop\GdzieZjem\GdzieZjemAPI\bin\Debug\netcoreapp3.0\System.Web.Http.dll
+C:\Users\michal\Desktop\GdzieZjem\GdzieZjemAPI\bin\Debug\netcoreapp3.0\Microsoft.OpenApi.dll
+C:\Users\michal\Desktop\GdzieZjem\GdzieZjemAPI\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\michal\Desktop\GdzieZjem\GdzieZjemAPI\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\michal\Desktop\GdzieZjem\GdzieZjemAPI\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\michal\Desktop\GdzieZjem\GdzieZjemAPI\bin\Debug\netcoreapp3.0\Swashbuckle.Core.dll
+C:\Users\michal\Desktop\GdzieZjem\GdzieZjemAPI\obj\Debug\netcoreapp3.0\GdzieZjemAPI.MvcApplicationPartsAssemblyInfo.cs
