@@ -24,7 +24,7 @@ namespace GdzieZjemAPI.Controllers
         [HttpPost("auth")]
         public IActionResult Authenticate([FromBody]AuthenticateModel model)
         {
-            var user = _tokenService.AddTokenToUser(model.Username, model.Password);
+            var user = _tokenService.GenerateToken(model.Username,model.Password);
             if(user == null)
                 return BadRequest(new { message = "Username or password is incorrect" });
             return Ok(user);

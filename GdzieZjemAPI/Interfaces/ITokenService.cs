@@ -4,8 +4,7 @@ namespace GdzieZjemAPI.Interfaces
 {
     public interface ITokenService
     {
-        public string GenerateToken(User user);
-        public User AddTokenToUser(string username , string password);
+        public string GenerateToken(string username, string password);
 
     }
 }

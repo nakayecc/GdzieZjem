@@ -23,33 +23,20 @@ namespace GdzieZjemAPI.Services
             _configuration = configuration;
         }
 
-        public string GenerateToken(User user)
+        public string GenerateToken(string username, string password)
         {
             var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
 
             var token = new JwtSecurityToken(
                 claims: new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, user.NickName)
+                    new Claim(ClaimTypes.Name, username)
                 },
                 notBefore: new DateTimeOffset(DateTime.Now).DateTime,
                 expires: new DateTimeOffset(DateTime.Now.AddMinutes(60)).DateTime,
                 signingCredentials: new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256)
             );
             return new JwtSecurityTokenHandler().WriteToken(token);
-        }
-
-        public User AddTokenToUser(string username , string password)
-        {
-            var currentUser =
-                _apiContext.Users.SingleOrDefault(x => x.Password == password && x.NickName == username);
-            if (currentUser == null)
-                return null;
-            currentUser.Token = GenerateToken(currentUser);
-            _apiContext.SaveChanges();
-            return currentUser.WithoutPassword();
-
-            
         }
     }
 }
