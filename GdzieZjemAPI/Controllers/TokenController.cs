@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using GdzieZjemAPI.Interfaces;
@@ -14,23 +15,23 @@ namespace GdzieZjemAPI.Controllers
     public class TokenController : Controller
     {
         private readonly ITokenService _tokenService;
+        private readonly ApiContext _context;
 
-        public TokenController(ITokenService tokenService)
+        public TokenController(ITokenService tokenService, ApiContext apiContext)
         {
             _tokenService = tokenService;
+            _context = apiContext;
         }
 
         // Post
         [HttpPost("auth")]
-        public IActionResult Authenticate([FromBody]AuthenticateModel model)
+        public IActionResult Authenticate([FromBody] AuthenticateModel model)
         {
-            var user = _tokenService.GenerateToken(model.Username,model.Password);
-            if(user == null)
-                return BadRequest(new { message = "Username or password is incorrect" });
-            return Ok(user);
+            var currentUser =
+                _context.Users.SingleOrDefault(x => x.NickName == model.Username && x.Password == model.Password);
+            if (currentUser == null)
+                return BadRequest(new {message = "Username or password is incorrect"});
+            return Ok(_tokenService.GenerateToken(model.Username, model.Password));
         }
-        
-        
-    
     }
 }
