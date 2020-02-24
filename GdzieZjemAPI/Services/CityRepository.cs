@@ -36,7 +36,8 @@ namespace GdzieZjemAPI.Services
                 restaurantInCityDao.Restaurant.Add(new SelectRestaurantDao()
                 {
                     Address = restaurant.Address,
-                    Name = restaurant.Name
+                    Name = restaurant.Name,
+
                 });
             }
 

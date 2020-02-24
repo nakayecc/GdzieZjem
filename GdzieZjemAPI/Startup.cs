@@ -39,6 +39,7 @@ namespace GdzieZjemAPI
                 opt.UseSqlServer(Configuration.GetConnectionString("ApiDBConnection")));
             services.AddTransient<ICityRepository, CityRepository>();
             services.AddTransient<ITokenService, TokenService>();
+            services.AddTransient<IRestaurantRepository, RestaurantRepository>();
             services.AddSwaggerGen(c => c.SwaggerDoc("v1", new OpenApiInfo {Title = "Value Api", Version = "v1"}));
 
             services.AddAuthentication(opt =>
