@@ -34,7 +34,7 @@ namespace GdzieZjemAPI.Controllers
         }
 
         // GET: api/city
-        [HttpGet]
+        [HttpGet("")]
         [Authorize]
         public List<SelectCityDto> GetAllCity()
         {
