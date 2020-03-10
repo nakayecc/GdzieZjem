@@ -33,8 +33,6 @@ namespace GdzieZjemAPI.Services
                         City = cityRestaurant.City.Name
                     }));
             }
-
-
             return restaurantList;
         }
 

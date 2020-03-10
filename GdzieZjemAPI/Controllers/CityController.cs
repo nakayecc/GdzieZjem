@@ -33,6 +33,12 @@ namespace GdzieZjemAPI.Controllers
             return _cityRepository.FindRestaurantByCityId(id);
         }
 
+        [HttpGet("restaurants/{cityName}")]
+        public List<SelectRestaurantDto> GetAllRestaurantsByCityName(string cityName)
+        {
+            return _cityRepository.GetAllRestaurantByCity(cityName);
+        }
+
         // GET: api/city
         [HttpGet("")]
         [Authorize]

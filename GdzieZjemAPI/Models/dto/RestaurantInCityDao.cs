@@ -5,10 +5,10 @@ namespace GdzieZjemAPI.Models.dto
     public class RestaurantInCityDao
     {
         public string City { get; set; }
-        public List<SelectRestaurantDao> Restaurant { get; set; }
+        public List<SelectRestaurantDto> Restaurant { get; set; }
         public RestaurantInCityDao()
         {
-            Restaurant = new List<SelectRestaurantDao>();
+            Restaurant = new List<SelectRestaurantDto>();
         }
     }
 }

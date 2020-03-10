@@ -33,7 +33,7 @@ namespace GdzieZjemAPI.Services
 
             foreach (var restaurant in quarry)
             {
-                restaurantInCityDao.Restaurant.Add(new SelectRestaurantDao()
+                restaurantInCityDao.Restaurant.Add(new SelectRestaurantDto()
                 {
                     Address = restaurant.Address,
                     Name = restaurant.Name,
@@ -70,6 +70,27 @@ namespace GdzieZjemAPI.Services
             Delete(id);
             Save();
             return true;
+        }
+
+        public List<SelectRestaurantDto> GetAllRestaurantByCity(string cityName)
+        {
+            var restaurantList = new List<SelectRestaurantDto>();
+
+            var quarry = GetContext()
+                .Where(c => c.Name == cityName)
+                .Include(cr => cr.CityRestaurants)
+                .ThenInclude(r => r.Restaurant);
+
+            foreach (var city in quarry)
+            {
+                restaurantList.AddRange(city.CityRestaurants.Select(cityRestaurant => new SelectRestaurantDto
+                {
+                    Address = cityRestaurant.Restaurant.Address,
+                    Name = cityRestaurant.Restaurant.Name
+                }));
+            }
+            
+            return restaurantList;
         }
     }
 }
