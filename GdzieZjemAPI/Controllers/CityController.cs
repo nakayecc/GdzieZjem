@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using GdzieZjemAPI.Interfaces;
 using GdzieZjemAPI.Models;
-using GdzieZjemAPI.Models.Dao;
+using GdzieZjemAPI.Models.dto;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;

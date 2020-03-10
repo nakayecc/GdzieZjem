@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using GdzieZjemAPI.Models;
-using GdzieZjemAPI.Models.Dao;
+using GdzieZjemAPI.Models.dto;
 
 namespace GdzieZjemAPI.Interfaces
 {

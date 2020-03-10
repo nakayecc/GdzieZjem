@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GdzieZjemAPI.Interfaces;
 using GdzieZjemAPI.Models;
-using GdzieZjemAPI.Models.Dao;
+using GdzieZjemAPI.Models.dto;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;

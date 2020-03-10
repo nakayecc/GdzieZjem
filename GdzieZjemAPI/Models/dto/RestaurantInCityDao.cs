@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace GdzieZjemAPI.Models.Dao
+namespace GdzieZjemAPI.Models.dto
 {
     public class RestaurantInCityDao
     {

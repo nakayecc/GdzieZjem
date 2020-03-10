@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using GdzieZjemAPI.Interfaces;
 using GdzieZjemAPI.Models;
-using GdzieZjemAPI.Models.Dao;
+using GdzieZjemAPI.Models.dto;
 using Microsoft.EntityFrameworkCore;
 
 namespace GdzieZjemAPI.Services

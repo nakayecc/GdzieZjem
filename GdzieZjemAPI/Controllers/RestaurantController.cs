@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using GdzieZjemAPI.Interfaces;
 using GdzieZjemAPI.Models;
-using GdzieZjemAPI.Models.Dao;
+using GdzieZjemAPI.Models.dto;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GdzieZjemAPI.Controllers
