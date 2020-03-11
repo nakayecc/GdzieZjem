@@ -34,9 +34,10 @@ namespace GdzieZjemAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddControllers();
             services.AddDbContext<ApiContext>(opt =>
-                opt.UseSqlServer(Configuration.GetConnectionString("ApiDBConnection")));
+                opt.UseSqlServer(Configuration.GetConnectionString("ApiDBConnectionLocal")));
             services.AddTransient<ICityRepository, CityRepository>();
             services.AddTransient<ITokenService, TokenService>();
             services.AddTransient<IRestaurantRepository, RestaurantRepository>();
@@ -50,13 +51,12 @@ namespace GdzieZjemAPI
             {
                 jwtOpt.TokenValidationParameters = new TokenValidationParameters()
                 {
-                    IssuerSigningKey =  new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"])),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"])),
                     ValidateIssuer = false,
                     ValidateAudience = false,
                     ValidateIssuerSigningKey = true,
                     ValidateLifetime = true,
                     ClockSkew = TimeSpan.FromMinutes(5)
-                    
                 };
             });
         }
@@ -69,6 +69,10 @@ namespace GdzieZjemAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod());
             app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseRouting();

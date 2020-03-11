@@ -5,5 +5,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>GdzieZjemAPI</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>GdzieZjemAPI20200310065720 - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

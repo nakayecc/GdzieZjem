@@ -15,6 +15,7 @@ namespace GdzieZjemAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("CorsPolicy")] 
     public class CityController : Controller
     {
         private readonly ICityRepository _cityRepository;
@@ -41,7 +42,6 @@ namespace GdzieZjemAPI.Controllers
 
         // GET: api/city
         [HttpGet("")]
-        [Authorize]
         public List<SelectCityDto> GetAllCity()
         {
             return _cityRepository.GetAllCity();
